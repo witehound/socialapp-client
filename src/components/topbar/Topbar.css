@@ -86,8 +86,8 @@
      border-radius: 50%;
      background-color: red;
      position: absolute;
-     left: -0.5px;
-    
+     right: -4px;
+     top:-2px;
  }
 
  .top-bar-icon-item-badge-count{ 
