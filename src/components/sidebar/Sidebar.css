@@ -1,0 +1,24 @@
+.sidebar-div{
+    flex: 3;
+    height: 100%;
+}
+
+.sidebar-wrap{
+    padding: 20px; 
+}
+
+.sidbar-list-items{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar-list-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-icon{
+    margin-right: 15px ;
+}
