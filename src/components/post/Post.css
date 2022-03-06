@@ -1,0 +1,87 @@
+.post-div{
+    box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+.post-icon{
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.post-wrap{
+    padding: 10px;
+}
+
+.post-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-top-left{
+    display: flex;
+    align-items: center;
+}
+
+.post-username{
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0px 10px;
+}
+
+.post-date{
+    font-size: 12px;
+}
+
+.post-centre{
+    margin: 20px 0px;
+}
+
+.post-center-media{
+    margin-top: 20px;
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.post-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-bottom-left{
+    display: flex;
+    align-items: center;
+}
+
+.post-bottom-left-like{
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.post-bottom-left-heart{
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.post-bottom-left-counter{
+    font-size: 15px;
+}
+
+.post-bottom-comment-text{
+    font-size: 15px;
+    cursor: pointer;
+    border-bottom: 1px dashed grey;
+}
+
