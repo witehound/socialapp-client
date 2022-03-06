@@ -1,3 +1,9 @@
+# Social App
+This is my front end clint side application for a full stack web social media application.
+
+# Objecttives
+I hope with this project i get challenged to think in new ways, i am most excited about how i will be managing state and data of this application. Will keep documenting the process.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
