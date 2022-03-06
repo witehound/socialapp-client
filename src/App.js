@@ -3,8 +3,8 @@ import {Person} from '@material-ui/icons'
 function App() {
   return (
     <div >
-     <Person/>
      <Home/>
+     {/*<Person/>*/}
     </div>
   );
 }
