@@ -51,7 +51,67 @@ function Sidebar() {
         <ul className="side-bar-friendlist">
           <li className="side-bar-friend">
             <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
-            <span className='sidebar-friend-name'> jane doe </span>
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
+          </li>
+          <li className="side-bar-friend">
+            <img src="/assets/person/2.jpeg" alt="" className="siderbar-friend-img" />
+            <span className='sidebar-friend-name'> Jane Doe </span>
           </li>
         </ul>
       </div>
