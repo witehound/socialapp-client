@@ -1,0 +1,97 @@
+.profile{
+    display: flex;
+    position: sticky;
+}
+
+.profile-right{
+    flex: 9;
+}
+
+.profile-rigth-bottom{
+    display: flex;
+}
+
+.profile-cover{
+    height: 300px;
+    position: relative;
+}
+
+.profile-cover-img{
+   width: 100%;
+   height: 250px;
+   object-fit: cover;
+}
+
+.profile-cover-img-user{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 150px;
+    border: 3px white solid;
+} 
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-name{
+    font-size: 24px;
+}
+
+.profile-info-desc{
+    font-weight: 300;
+}
+
+.profile-rightbar-title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.right-bar-following-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 5px ;
+    margin-bottom: 5px;
+}
+
+.right-bar-info{
+    margin-bottom: 30px;
+}
+
+.right-bar-info-item{
+    margin-bottom: 10px;
+}
+
+.right-bar-info-key{
+    font-weight: 500;
+    margin-right: 15px;
+    color: #555;
+}
+
+.right-bar-ingo-value{
+    font-weight: 100;
+}
+
+.rightbar-following-other{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.right-bar-following{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
