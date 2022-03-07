@@ -1,6 +1,8 @@
 .sidebar-div{
     flex: 3;
-    height: 100%;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    position: sticky;
 }
 
 .sidebar-wrap{

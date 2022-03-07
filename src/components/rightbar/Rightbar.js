@@ -1,6 +1,6 @@
 import './Rightbar.css'
 
-function Rightbar() {
+function Rightbar({users}) {
   return (
     <div className='rightbar-div'>
       <div className="right-bar-wrap">
@@ -11,41 +11,16 @@ function Rightbar() {
         <img src="/assets/ad.png" alt="" className="space-for-advertisement" />
         <h4 className="right-bar-title">Friends Online</h4>
         <ul className="friends-online-list">
-          <li className="friend-online">
+        {users.map((user)=>(
+          <li key={user.id} className="friend-online">
             <div className="friend-online-image-container">
-              <img src="/assets/person/3.jpeg" alt="" className="friend-online-image" />
+              <img src={user.profilePicture} alt="" className="friend-online-image" />
               <span className="friend-online-status"> </span>
             </div>
-            <span className="friends-online-usename">John Carter</span>
-          </li>
-          <li className="friend-online">
-            <div className="friend-online-image-container">
-              <img src="/assets/person/3.jpeg" alt="" className="friend-online-image" />
-              <span className="friend-online-status"> </span>
-            </div>
-            <span className="friends-online-usename">John Carter</span>
-          </li>
-          <li className="friend-online">
-            <div className="friend-online-image-container">
-              <img src="/assets/person/3.jpeg" alt="" className="friend-online-image" />
-              <span className="friend-online-status"> </span>
-            </div>
-            <span className="friends-online-usename">John Carter</span>
-          </li>
-          <li className="friend-online">
-            <div className="friend-online-image-container">
-              <img src="/assets/person/3.jpeg" alt="" className="friend-online-image" />
-              <span className="friend-online-status"> </span>
-            </div>
-            <span className="friends-online-usename">John Carter</span>
-          </li>
-          <li className="friend-online">
-            <div className="friend-online-image-container">
-              <img src="/assets/person/3.jpeg" alt="" className="friend-online-image" />
-              <span className="friend-online-status"> </span>
-            </div>
-            <span className="friends-online-usename">John Carter</span>
-          </li>
+            <span className="friends-online-usename">{user.username}</span>
+          </li>)
+          )
+        }
         </ul>
       </div>
     </div>
