@@ -3,7 +3,6 @@ import { RssFeed, Event, School, WorkOutline, HelpOutline, Bookmark, Group
 ,PlayCircleFilledOutlined, Chat } from '@material-ui/icons'
 
 function Sidebar({users}) {
-  console.log(users)
   return (
     <div className='sidebar-div'>
       <div className="sidebar-wrap">

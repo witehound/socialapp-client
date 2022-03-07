@@ -4,19 +4,18 @@ import "./Post.css"
 
 function Post({post, Users}) {
   const user = Users.filter(u=>u.id === post.id)
+  const [likes, setLikes] = useState(post.like)
+  const [isLiked, setIsLiked] = useState(false)
+  const [isHeart, setIsHeart] = useState(false)
 
-  const [total, setTotal] = useState(0)
-  const [like, setLike] = useState(0)
- 
+  const handleOnClickLike = () => {
+    !isLiked ?  setLikes(likes + 1) :  setLikes(likes-1)
+    setIsLiked(!isLiked)
+  }
 
-  const hanleOnisLike = () => {
-    if(like >= 1){
-      setLike(0)
-      total <= 0 ? setTotal(0) : setTotal(total - 1)
-    }else{
-      setLike(1)
-      setTotal(total + 1)
-    }
+  const handleOnClickHeart = () => {
+    !isHeart ?  setLikes(likes + 1) :  setLikes(likes-1)
+    setIsHeart(!isHeart)
   }
 
   return (
@@ -40,9 +39,9 @@ function Post({post, Users}) {
         </div>
         <div className="post-bottom">
           <div className="post-bottom-left">
-            <img src="/assets/like.png" alt="" className="post-bottom-left-like" onClick={hanleOnisLike} />
-            <img src="/assets/heart.png" alt="" className="post-bottom-left-heart" onClick={hanleOnisLike}/>
-            <span className="post-bottom-left-counter" >{total} people liked this post</span>
+            <img src="/assets/like.png" alt="" className="post-bottom-left-like"  onClick={handleOnClickLike}/>
+            <img src="/assets/heart.png" alt="" className="post-bottom-left-heart" onClick={handleOnClickHeart}/>
+            <span className="post-bottom-left-counter" >{likes} people liked this post</span>
           </div>
           <div className="post-bottom-right">
              <div className="post-bottom-comment-text">{post.comment} comments</div>
