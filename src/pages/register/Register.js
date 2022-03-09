@@ -17,7 +17,7 @@ function Register() {
              <input type="password" className="login-input" placeholder='Password'/>
              <input type="password" className="login-input" placeholder='Re-enter Password'/>
              <button className="login-button">SIGN UP</button>
-             <button className='login-reigiester-button'>lOGIN TO ACCOUNT</button>
+             <button className='login-reigiester-button'>LOGIN TO ACCOUNT</button>
            </div>
           </div>
       </div>

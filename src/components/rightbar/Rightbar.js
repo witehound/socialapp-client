@@ -1,6 +1,7 @@
 import './Rightbar.css'
 
 function Rightbar({users , profile}) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
   const HomeRightBar = () => {
     return(
@@ -15,7 +16,7 @@ function Rightbar({users , profile}) {
         {users.map((user)=>(
           <li key={user.id} className="friend-online">
             <div className="friend-online-image-container">
-              <img src={user.profilePicture} alt="" className="friend-online-image" />
+              <img src={PF+user.profilePicture} alt="" className="friend-online-image" />
               <span className="friend-online-status"> </span>
             </div>
             <span className="friends-online-usename">{user.username}</span>
@@ -49,27 +50,27 @@ function Rightbar({users , profile}) {
       <div className="right-bar-followings">
        <div className="rightbar-following-other">
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/6.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div>
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/5.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div>
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/4.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div>
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/1.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div> 
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/3.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div>
          <div className="right-bar-following">
-           <img src="/assets/person/6.jpeg" alt="" className="right-bar-following-img" />
+           <img src={`${PF}person/8.jpeg`} alt="" className="right-bar-following-img" />
            <span className="rightg-follwing-name">ezikiel</span>
          </div>
        </div>
@@ -81,7 +82,7 @@ function Rightbar({users , profile}) {
   return (
     <div className='rightbar-div'>
       <div className="right-bar-wrap">
-       {profile ? <ProfileRightBar/> : <HomeRightBar/> } 
+       {!profile ? <ProfileRightBar/> : <HomeRightBar/> } 
       </div>
     </div>
   )

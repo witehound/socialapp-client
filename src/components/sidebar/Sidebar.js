@@ -2,7 +2,10 @@ import './Sidebar.css'
 import { RssFeed, Event, School, WorkOutline, HelpOutline, Bookmark, Group
 ,PlayCircleFilledOutlined, Chat } from '@material-ui/icons'
 
+
 function Sidebar({users}) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
   return (
     <div className='sidebar-div'>
       <div className="sidebar-wrap">
@@ -51,7 +54,7 @@ function Sidebar({users}) {
         <ul className="side-bar-friendlist">
        {users.map((user)=>(
           <li key={user.id} className="side-bar-friend">
-            <img src={user.profilePicture} alt="" className="siderbar-friend-img" />
+            <img src={PF+user.profilePicture} alt="" className="siderbar-friend-img" />
             <span className='sidebar-friend-name'> {user.username} </span>
           </li>
         ))}

@@ -1,12 +1,25 @@
 import { MoreVert } from '@material-ui/icons'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import "./Post.css"
+import axios from 'axios'
 
-function Post({post, Users}) {
-  const user = Users.filter(u=>u.id === post.id)
-  const [likes, setLikes] = useState(post.like)
+function Post ({post}) {
+  console.log(post)
+  const [user,setUser] = useState([])
+  
+  useEffect( () => {
+    const fetchUser = async () => {
+     const res = await axios.get(`user/${post.userId}`)
+     setUser(res.data)
+   }
+   fetchUser()
+ }, [user,post.userId])
+
+  const [likes, setLikes] = useState(post.likes)
   const [isLiked, setIsLiked] = useState(false)
   const [isHeart, setIsHeart] = useState(false)
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER 
 
   const handleOnClickLike = () => {
     !isLiked ?  setLikes(likes + 1) :  setLikes(likes-1)
@@ -35,12 +48,12 @@ function Post({post, Users}) {
           <div className="post-text">
               {post?.desc}
           </div>
-          <img src={post.photo} alt="" className="post-center-media" />
+          <img src={PF+post.photo} alt="" className="post-center-media" />
         </div>
         <div className="post-bottom">
           <div className="post-bottom-left">
-            <img src="/assets/like.png" alt="" className="post-bottom-left-like"  onClick={handleOnClickLike}/>
-            <img src="/assets/heart.png" alt="" className="post-bottom-left-heart" onClick={handleOnClickHeart}/>
+            <img src={`${PF}like.png`} alt="" className="post-bottom-left-like"  onClick={handleOnClickLike}/>
+            <img src={`${PF}heart.png`} alt="" className="post-bottom-left-heart" onClick={handleOnClickHeart}/>
             <span className="post-bottom-left-counter" >{likes} people liked this post</span>
           </div>
           <div className="post-bottom-right">
