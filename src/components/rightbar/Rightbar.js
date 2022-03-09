@@ -1,6 +1,6 @@
 import './Rightbar.css'
 
-function Rightbar({users}) {
+function Rightbar({users , profile}) {
 
   const HomeRightBar = () => {
     return(
@@ -81,7 +81,7 @@ function Rightbar({users}) {
   return (
     <div className='rightbar-div'>
       <div className="right-bar-wrap">
-        <ProfileRightBar/>
+       {profile ? <ProfileRightBar/> : <HomeRightBar/> } 
       </div>
     </div>
   )
