@@ -6,13 +6,12 @@ import axios from 'axios'
 
 function Feed() {
   const [Posts,setPosts] = useState([])
-  
+
 
   useEffect(() => {
      const fetchPost = async () => {
        const res = await axios.get("http://localhost:8800/post/timeline/622103d9192def301274755e")
-       console.log(res.data.following[1])
-      //  setPosts(() => res.data)
+       setPosts(() => res.data.following)
      }
     fetchPost()
   }, [])
@@ -22,17 +21,15 @@ function Feed() {
   return (
     <div className='feed-div'>
       <div className="feed-wrap">
-      {console.log(Posts)}
         <Share/>
         {
-          Posts.following.map((p)=>(
+          Posts.map((p)=>(
             <Post
-              key={p._id}
+              key={p}
               post={p}
             />
           )) 
           }
-        {console.log(Posts)}
       </div>
     </div>
   )

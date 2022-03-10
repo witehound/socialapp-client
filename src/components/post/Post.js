@@ -5,21 +5,29 @@ import "./Post.css"
 import axios from 'axios'
 
 function Post ({post}) {
-  console.log(post)
   const [user,setUser] = useState([])
-  
-  useEffect( () => {
-    const fetchUser = async () => {
-     const res = await axios.get(`user/${post.userId}`)
-     setUser(res.data)
-   }
-   fetchUser()
- }, [user,post.userId])
-
-  const [likes, setLikes] = useState(post.likes)
+  const [postToSee,setPostToSee] = useState([])
+  const [likes, setLikes] = useState()
   const [isLiked, setIsLiked] = useState(false)
   const [isHeart, setIsHeart] = useState(false)
   const PF = process.env.REACT_APP_PUBLIC_FOLDER 
+  
+  useEffect( () => {
+    const fetchPost = async () => {
+     const res = await axios.get(`http://localhost:8800/post/${post}`)
+     setPostToSee(res.data)
+     setLikes(res.data.likes.length)
+   }
+   const fetchUser = async () => {
+    const res = await axios.get(`http://localhost:8800/user/${post}`)
+    
+    setUser(res.data)
+  }
+   fetchPost()
+   fetchUser()
+ }, [])
+
+  
 
   const handleOnClickLike = () => {
     !isLiked ?  setLikes(likes + 1) :  setLikes(likes-1)
@@ -36,9 +44,9 @@ function Post ({post}) {
       <div className="post-wrap">
         <div className="post-top">
           <div className="post-top-left">
-              <img src={user[0].profilePicture} alt="" className="post-icon" />
-              <span className="post-username">{user[0].username}</span>
-              <span className="post-date">{post.date}</span>
+              <img src={user.profilePicture} alt="" className="post-icon" />
+              <span className="post-username">{user.username}</span>
+              <span className="post-date">{postToSee.date}</span>
           </div>
           <div className="post-top-right">
               <MoreVert/>
@@ -46,9 +54,9 @@ function Post ({post}) {
         </div>
         <div className="post-centre">
           <div className="post-text">
-              {post?.desc}
+              {postToSee?.desc}
           </div>
-          <img src={PF+post.photo} alt="" className="post-center-media" />
+          <img src={PF+postToSee.photo} alt="" className="post-center-media" />
         </div>
         <div className="post-bottom">
           <div className="post-bottom-left">
@@ -57,7 +65,7 @@ function Post ({post}) {
             <span className="post-bottom-left-counter" >{likes} people liked this post</span>
           </div>
           <div className="post-bottom-right">
-             <div className="post-bottom-comment-text">{post.comment} comments</div>
+             <div className="post-bottom-comment-text">comment comments</div>
           </div>
         </div>
       </div>
