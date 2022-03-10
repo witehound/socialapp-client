@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import "./Post.css"
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-function Post ({post}) {
+
+function Post ({userId}) {
   const [user,setUser] = useState([])
   const [postToSee,setPostToSee] = useState([])
   const [likes, setLikes] = useState()
@@ -14,18 +16,20 @@ function Post ({post}) {
   
   useEffect( () => {
     const fetchPost = async () => {
-     const res = await axios.get(`http://localhost:8800/post/${post}`)
-     setPostToSee(res.data)
-     setLikes(res.data.likes.length)
+     const res = await axios.get(`http://localhost:8800/post/${userId}`)
+     for(let i = 0; i < res.data.length;i++){
+       setPostToSee(res.data[i])
+       setLikes(res.data[i].likes.length)
+     }
+     
    }
    const fetchUser = async () => {
-    const res = await axios.get(`http://localhost:8800/user/${post}`)
-    
+    const res = await axios.get(`http://localhost:8800/user/${userId}`)
     setUser(res.data)
   }
    fetchPost()
    fetchUser()
- }, [])
+ }, [userId])
 
   
 
@@ -44,9 +48,11 @@ function Post ({post}) {
       <div className="post-wrap">
         <div className="post-top">
           <div className="post-top-left">
-              <img src={!user.profilePicture} alt="" className="post-icon" />
+            <Link to={`/profile/${user.username}`}>
+              <img src={user.profilePicture || PF+"person/noAvatar.png"} alt="" className="post-icon" />
+            </Link>
               <span className="post-username">{user.username}</span>
-              <span className="post-date">{postToSee.date}</span>
+              <span className="post-date">{postToSee.data}</span>
           </div>
           <div className="post-top-right">
               <MoreVert/>
@@ -54,9 +60,9 @@ function Post ({post}) {
         </div>
         <div className="post-centre">
           <div className="post-text">
-              {postToSee?.desc}
+              {postToSee.desc}
           </div>
-          <img src={PF+postToSee.photo} alt="" className="post-center-media" />
+          <img src={PF+postToSee.img} alt="" className="post-center-media" />
         </div>
         <div className="post-bottom">
           <div className="post-bottom-left">

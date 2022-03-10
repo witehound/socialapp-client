@@ -11,7 +11,8 @@ function Feed() {
   useEffect(() => {
      const fetchPost = async () => {
        const res = await axios.get("http://localhost:8800/post/timeline/622103d9192def301274755e")
-       setPosts(() => res.data.following)
+       setPosts(() => res.data)
+      // console.log(res.data)
      }
     fetchPost()
   }, [])
@@ -25,8 +26,8 @@ function Feed() {
         {
           Posts.map((p)=>(
             <Post
-              key={p}
-              post={p}
+              key={p._id}
+              userId={p.userId}
             />
           )) 
           }
