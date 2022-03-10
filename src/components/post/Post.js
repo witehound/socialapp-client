@@ -44,7 +44,7 @@ function Post ({post}) {
       <div className="post-wrap">
         <div className="post-top">
           <div className="post-top-left">
-              <img src={user.profilePicture} alt="" className="post-icon" />
+              <img src={!user.profilePicture} alt="" className="post-icon" />
               <span className="post-username">{user.username}</span>
               <span className="post-date">{postToSee.date}</span>
           </div>
@@ -65,7 +65,7 @@ function Post ({post}) {
             <span className="post-bottom-left-counter" >{likes} people liked this post</span>
           </div>
           <div className="post-bottom-right">
-             <div className="post-bottom-comment-text">comment comments</div>
+             <div className="post-bottom-comment-text">{postToSee.comments}</div>
           </div>
         </div>
       </div>
