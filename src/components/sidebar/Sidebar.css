@@ -1,12 +1,13 @@
 .sidebar-div{
     flex: 3;
     height: calc(100vh - 50px);
-    overflow-y: auto;
     position: sticky;
+    overflow-y: scroll;
 }
 
 .sidebar-wrap{
-    padding: 20px; 
+    padding: 20px;
+    overflow-y: scroll ;
 }
 
 .sidbar-list-items{
